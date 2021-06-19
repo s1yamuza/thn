@@ -1,0 +1,13 @@
+{
+    "name": "s1yamuza/thn",
+    "description": "THN Test Backend Default",
+    "type": "project",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Sergio Yamuza",
+            "email": "sergioyamuza@gmail.com"
+        }
+    ],
+    "require": {}
+}
