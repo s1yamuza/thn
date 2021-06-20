@@ -21,7 +21,7 @@ down: ## Docker down
 	docker-compose down
 
 nginx: ## Access Nginx bash
-	docker exec -it -w /code skeleton_web_1 /bin/sh
+	docker exec -it -w /src skeleton_web_1 /bin/sh
 
 php: ## Access PHP bash
 	docker exec -it -w /code skeleton_php_1 /bin/sh
@@ -36,3 +36,4 @@ test: ## Run unit tests
 
 test-coverage: ## Run tests with coverage
 	docker exec -it -w /code skeleton_php_1 /bin/sh -c './vendor/bin/phpunit'
+	docker exec -it -w /src skeleton_web_1 /bin/sh
