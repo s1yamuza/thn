@@ -26,7 +26,7 @@ then
     echo "\e[33m \e[1m"
     echo "\n-- Running Code Sniffer for PSR12 standard"
     echo "\e[0m"
-    php ./vendor/bin/phpcs -s --standard=PSR12 -n -p $FILES
+    docker exec -w /code skeleton_php_1 /bin/sh -c "php ./vendor/bin/phpcs -s --standard=PSR12 -n -p $FILES"
 
     if [ $? != 0 ]
     then
@@ -39,7 +39,7 @@ fi
 if [ "$FILES" != "" ]
 then
     echo "Running unit tests"
-    make test
+	docker exec -i -w /code skeleton_php_1 /bin/sh -c './vendor/bin/phpunit --no-coverage'
 fi
 
 exit $?
