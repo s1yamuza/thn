@@ -36,4 +36,3 @@ test: ## Run unit tests
 
 test-coverage: ## Run tests with coverage
 	docker exec -it -w /code skeleton_php_1 /bin/sh -c './vendor/bin/phpunit'
-	docker exec -it -w /src skeleton_web_1 /bin/sh
