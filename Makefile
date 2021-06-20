@@ -5,7 +5,6 @@ help: ## Available Makefile commmands
 
 build: ## Build app
 	docker-compose build 
-	@make composer-install
 	@make add-git-hooks
 
 composer-install: ## Install dependencies
@@ -21,7 +20,7 @@ down: ## Docker down
 	docker-compose down
 
 nginx: ## Access Nginx bash
-	docker exec -it -w /src skeleton_web_1 /bin/sh
+	docker exec -it -w /code skeleton_web_1 /bin/sh
 
 php: ## Access PHP bash
 	docker exec -it -w /code skeleton_php_1 /bin/sh
