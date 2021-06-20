@@ -14,7 +14,7 @@ services:
     build:
       context: ./docker/php
     volumes:
-      - ./src:/src
+      - ./:/code
   mysql:
     container_name: skeleton_mysql_1
     image: mysql:5.7

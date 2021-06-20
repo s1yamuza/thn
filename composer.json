@@ -1,0 +1,31 @@
+{
+    "name": "s1yamuza/thn",
+    "description": "THN Test Backend Default",
+    "type": "project",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Sergio Yamuza",
+            "email": "sergioyamuza@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "squizlabs/php_codesniffer": "^3.2"
+    },
+    "config": {
+    },
+    "autoload": {
+        "psr-4": {
+            "THN\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "THN\\Tests\\": "tests/"
+        }
+    }
+}
