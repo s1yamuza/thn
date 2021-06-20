@@ -6,9 +6,13 @@ help: ## Available Makefile commmands
 build: ## Build app
 	docker-compose build 
 	@make composer-install
+	@make add-git-hooks
 
 composer-install: ## Install dependencies
 	docker exec -it -w /code skeleton_php_1 /bin/sh -c "composer install"
+
+composer-update: ## Update dependencies
+	docker exec -it -w /code skeleton_php_1 /bin/sh -c "composer update"	
 
 up: ## Docker up
 	docker-compose up
@@ -21,3 +25,14 @@ nginx: ## Access Nginx bash
 
 php: ## Access PHP bash
 	docker exec -it -w /code skeleton_php_1 /bin/sh
+
+add-git-hooks: ## Add custom git hooks 
+	@echo "Adding hooks for git...."
+	@cd .git/hooks && ln -s ../../pre-commit pre-commit || echo 'Git Hooks already added.'
+	@echo "Done."	
+
+test: ## Run unit tests
+	docker exec -it -w /code skeleton_php_1 /bin/sh -c './vendor/bin/phpunit --no-coverage'
+
+test-coverage: ## Run tests with coverage
+	docker exec -it -w /code skeleton_php_1 /bin/sh -c './vendor/bin/phpunit'
