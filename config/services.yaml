@@ -33,8 +33,8 @@ services:
     THN\Application\UseCase\:
         resource: '../src/Application/UseCase/'
 
-    THN\Infrastructure\Service\:
-        resource: '../src/Infrastructure/Service/'
+    THN\Infrastructure\Persistence\:
+        resource: '../src/Infrastructure/Persistence/'
 
 
     # add more service definitions when explicit configuration is needed

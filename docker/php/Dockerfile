@@ -1,6 +1,5 @@
-FROM php:8.0-fpm
+FROM php:7.4-fpm
 
-# Install composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 RUN apt-get clean
@@ -10,3 +9,5 @@ RUN apt-get install -y \
         git \
         zip \
         unzip
+
+RUN docker-php-ext-install pdo pdo_mysql mysqli

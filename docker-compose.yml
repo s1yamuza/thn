@@ -11,7 +11,7 @@ services:
       - ./:/code
   php:
     container_name: skeleton_php_1
-    image: php:8.0-fpm
+    image: php:7.4-fpm
     build:
       context: ./docker/php
     volumes:
