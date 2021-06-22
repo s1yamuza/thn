@@ -1,31 +1,22 @@
-<!DOCTYPE html>
-<html lang="es" style="background-color: #f2f2f2;">
-    <head>
-        <title>The Hotels Network</title>
-        <meta charset="utf-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <style>
-        .wrapper {
-            -webkit-box-shadow: 10px 10px 3px -4px rgba(173,173,173,0.53);
-            -moz-box-shadow: 10px 10px 3px -4px rgba(173,173,173,0.53);
-            box-shadow: 10px 10px 3px -4px rgba(173,173,173,0.53);
-        }
-    </style>
-    <body>
-      <div class="wrapper" style="border-radius: 5px;width: 400px;margin: auto;background-color: #fff;padding: 15px;margin-top: 50px;">
+<?php
 
-        <div class="logo" style="width: 30%;margin: auto;">
-          <a href="#" class="navbar-brand">
-              <img src="https://www.thehotelsnetwork.com/img/logos/logo_color.svg" width="140" alt="The Hotels Network Logo" class="logo" id="logo-desktop">
-          </a>
-        </div>
-        <div class="info" style="color: #607d8b">
-            <div>
+use THN\Kernel;
+use Symfony\Component\Dotenv\Dotenv;
+use Symfony\Component\ErrorHandler\Debug;
+use Symfony\Component\HttpFoundation\Request;
 
-            </div>
-        </div>
-      </div>
-    </body>
-</html>
+require dirname(__DIR__) . '/vendor/autoload.php';
 
+(new Dotenv())->bootEnv(dirname(__DIR__) . '/.env');
+
+if ($_SERVER['APP_DEBUG']) {
+    umask(0000);
+
+    Debug::enable();
+}
+
+$kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
+$request = Request::createFromGlobals();
+$response = $kernel->handle($request);
+$response->send();
+$kernel->terminate($request, $response);
