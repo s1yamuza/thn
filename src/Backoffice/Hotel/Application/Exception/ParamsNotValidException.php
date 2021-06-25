@@ -1,6 +1,6 @@
 <?php
 
-namespace THN\Application\Exception;
+namespace THN\Backoffice\Hotel\Application\Exception;
 
 use Exception;
 use Throwable;
