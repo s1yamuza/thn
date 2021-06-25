@@ -1,11 +1,10 @@
 <?php
 
-namespace THN\Infrastructure\Controller;
+namespace THN\Apps\Backoffice\Controller;
 
-use PDO;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use THN\Infrastructure\Persistence\THNPDO;
+use THN\Backoffice\Hotel\Infrastructure\Persistence\THNPDO;
 
 class HotelController extends AbstractController
 {

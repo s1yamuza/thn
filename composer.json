@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^7.4.0",
+        "php": "^7.4",
         "symfony/console": "5.2.*",
         "symfony/dotenv": "5.2.*",
         "symfony/flex": "^1.3.1",
@@ -27,7 +27,8 @@
     },
     "autoload": {
         "psr-4": {
-            "THN\\": "src/"
+            "THN\\": "src/",
+            "THN\\Apps\\": "apps/"
         }
     },
     "autoload-dev": {

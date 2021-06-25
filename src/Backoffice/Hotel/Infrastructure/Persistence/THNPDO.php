@@ -1,6 +1,6 @@
 <?php
 
-namespace THN\Infrastructure\Persistence;
+namespace THN\Backoffice\Hotel\Infrastructure\Persistence;
 
 use Exception;
 use PDO;
