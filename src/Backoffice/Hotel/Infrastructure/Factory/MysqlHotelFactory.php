@@ -4,6 +4,7 @@ namespace THN\Backoffice\Hotel\Insfrastructure\Factory;
 
 use THN\Backoffice\Hotel\Domain\Hotel;
 use THN\Backoffice\Hotel\Domain\HotelFactory;
+use THN\Backoffice\Hotel\Domain\Reservation;
 
 class MysqlHotelFactory extends HotelFactory
 {

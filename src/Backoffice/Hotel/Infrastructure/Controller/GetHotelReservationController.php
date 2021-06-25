@@ -6,8 +6,9 @@ use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use THN\Backoffice\Hotel\Application\Transformer\ListHotelResponseTransformer;
-use THN\Backoffice\Hotel\Application\UseCase\ListHotelUseCase;
+use THN\Backoffice\Hotel\Application\Transformer\GetReservationResponseTransformer;
+use THN\Backoffice\Hotel\Application\UseCase\GetHotelReservationUseCase;
+use THN\Backoffice\Hotel\Application\UseCase\GetHotelReservationUseCaseRequest;
 
 class GetHotelReservationController extends AbstractController
 {
@@ -15,27 +16,28 @@ class GetHotelReservationController extends AbstractController
     private $transformer;
 
     public function __construct(
-        ListHotelUseCase $usecase
+        GetHotelReservationUseCase $usecase
     ) {
         $this->usecase = $usecase;
-        $this->transformer = new ListHotelResponseTransformer();
+        $this->transformer = new GetReservationResponseTransformer();
     }
 
     public function __invoke(Request $request): Response
     {
-        $hotelId = $request->get('id');
+        $useCaseRequest = new GetHotelReservationUseCaseRequest($request->get('id'));
 
         try {
-            $useCaseResponse = $this->usecase->execute();
-            $hotels = $useCaseResponse->hotels();
+            $useCaseResponse = $this->usecase->execute($useCaseRequest->hotelId());
+            $reservations = $useCaseResponse->reservation();
 
-            $responseData = $this->transformer->transform(...$hotels);
+            $responseData = $this->transformer->transform(...$reservations);
         } catch (Exception $e) {
             // handle exception
+            //die;
         }
 
         return $this->render('base.html.twig', [
-            'hotels' => $responseData
+            'reservations' => $responseData
         ]);
     }
 }

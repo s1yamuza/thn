@@ -21,15 +21,32 @@
             </div>
             <div class="info" style="color: #607d8b">
                 <div>
-                <h3>Hotel list:</h3>
                 {% block body %}
-                    <ul>
-                    {% for hotel in hotels %}
-                        <li>
-                            <a href="/hotel/{{ hotel.id }}/reservation">{{ hotel.name }}</a>
-                        </li>
-                    {% endfor %}
-                    </ul>
+                    {% if hotels is defined %}
+                        <h3>Hotel list:</h3>
+                        <ul>
+                        {% for hotel in hotels %}
+                            <li>
+                                <a href="/hotel/{{ hotel.id }}/reservation">{{ hotel.name }}</a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if reservations is defined %}
+                        <h3>Reservations:</h3>
+                        <ul>
+                        {% for reservation in reservations %}
+                            <li>
+                                Room number: {{ reservation.roomNumber }} - <b>{{ reservation.user_name }}</b>
+                                - Terrace: {{ reservation.has_terrace ? 'Yes':'No' }}
+
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+
+
                 {% endblock %}
                 </div>
             </div>

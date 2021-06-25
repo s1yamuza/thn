@@ -10,3 +10,7 @@ CREATE TABLE `reservation` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `hotel_id` (`hotel_id`, `room_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `thn`.`reservation` (`user_id`, `hotel_id`, `room_number`) VALUES ('3', '1', '301');
+INSERT INTO `thn`.`reservation` (`user_id`, `hotel_id`, `room_number`) VALUES ('2', '1', '120');
+INSERT INTO `thn`.`reservation` (`user_id`, `hotel_id`, `room_number`) VALUES ('3', '1', '400');
