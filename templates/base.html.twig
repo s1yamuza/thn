@@ -21,14 +21,18 @@
             </div>
             <div class="info" style="color: #607d8b">
                 <div>
-
+                <h3>Hotel list:</h3>
+                {% block body %}
+                    <ul>
+                    {% for hotel in hotels %}
+                        <li>
+                            <a href="/hotel/{{ hotel.id }}/reservation">{{ hotel.name }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% endblock %}
                 </div>
             </div>
         </div>
-            {% block body %}
-                {% for hotel in hotels %}
-                    {{ hotel.name }} <br />
-                {% endfor %}
-            {% endblock %}
     </body>
 </html>
