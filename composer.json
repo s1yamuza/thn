@@ -28,7 +28,7 @@
     "autoload": {
         "psr-4": {
             "THN\\": "src/",
-            "THN\\Apps\\": "apps/"
+            "THN\\": "src/"
         }
     },
     "autoload-dev": {

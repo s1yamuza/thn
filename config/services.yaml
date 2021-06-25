@@ -8,8 +8,7 @@ services:
         resource: '../src/'
         exclude:
             - '../src/Kernel.php'
-    # THN\Shared\:
-    #     resource: '../src/Shared/'
-    THN\Apps\Backoffice\:
-        resource: '../apps/backoffice/src/'
+            - '../src/Backoffice/Hotel/Infrastructure/Controler/'
+    THN\Controller\:
+        resource: '../src/Backoffice/Hotel/Infrastructure/Controller/'
         tags: ['controller.service_arguments']

@@ -1,6 +1,6 @@
 <?php
 
-namespace THN\Apps\Backoffice\Controller;
+namespace THN\Controller;
 
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

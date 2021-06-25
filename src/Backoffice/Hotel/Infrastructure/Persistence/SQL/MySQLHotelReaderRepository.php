@@ -1,6 +1,6 @@
 <?php
 
-namespace THN\Backoffice\Infrastructure\Persistence\SQL;
+namespace THN\Backoffice\Hotel\Infrastructure\Persistence\SQL;
 
 use THN\Backoffice\Hotel\Domain\HotelReaderRepositoryInterface;
 use THN\Backoffice\Hotel\Insfrastructure\Factory\MysqlHotelFactory;
