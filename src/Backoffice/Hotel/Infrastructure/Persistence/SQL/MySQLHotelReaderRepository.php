@@ -3,8 +3,8 @@
 namespace THN\Backoffice\Hotel\Infrastructure\Persistence\SQL;
 
 use THN\Backoffice\Hotel\Domain\HotelReaderRepositoryInterface;
-use THN\Backoffice\Hotel\Insfrastructure\Factory\MysqlHotelFactory;
-use THN\Backoffice\Hotel\Insfrastructure\Factory\MysqlReservationFactory;
+use THN\Backoffice\Hotel\Infrastructure\Factory\MySQLHotelFactory;
+use THN\Backoffice\Hotel\Infrastructure\Factory\MySQLReservationFactory;
 use THN\Shared\Infrastructure\Persistence\SQL\THNPDO;
 
 class MySQLHotelReaderRepository implements HotelReaderRepositoryInterface
@@ -15,8 +15,8 @@ class MySQLHotelReaderRepository implements HotelReaderRepositoryInterface
         THNPDO $pdo
     ) {
         $this->pdo = $pdo;
-        $this->hotelFactory = new MysqlHotelFactory();
-        $this->reservationFactory = new MysqlReservationFactory();
+        $this->hotelFactory = new MySQLHotelFactory();
+        $this->reservationFactory = new MySQLReservationFactory();
     }
 
     public function list(): array

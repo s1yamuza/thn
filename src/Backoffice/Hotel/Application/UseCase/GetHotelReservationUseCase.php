@@ -14,9 +14,9 @@ class GetHotelReservationUseCase
         $this->hotelReaderRepository = $hotelReaderRepository;
     }
 
-    public function execute(int $hotelId)
+    public function execute(GetHotelReservationUseCaseRequest $request)
     {
-        $reservations = $this->hotelReaderRepository->reservation($hotelId);
+        $reservations = $this->hotelReaderRepository->reservation($request->hotelId());
 
         return new GetHotelReservationUseCaseResponse($reservations);
     }

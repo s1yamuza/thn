@@ -27,7 +27,7 @@ class GetHotelReservationController extends AbstractController
         $useCaseRequest = new GetHotelReservationUseCaseRequest($request->get('id'));
 
         try {
-            $useCaseResponse = $this->usecase->execute($useCaseRequest->hotelId());
+            $useCaseResponse = $this->usecase->execute($useCaseRequest);
             $reservations = $useCaseResponse->reservation();
 
             $responseData = $this->transformer->transform(...$reservations);

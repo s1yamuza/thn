@@ -20,8 +20,3 @@
 /.phpcs-cache
 /phpcs.xml
 ###< squizlabs/php_codesniffer ###
-
-###> symfony/phpunit-bridge ###
-.phpunit
-.phpunit.result.cache
-###< symfony/phpunit-bridge ###
