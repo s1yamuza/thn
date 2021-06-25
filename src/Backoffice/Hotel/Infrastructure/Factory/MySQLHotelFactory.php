@@ -1,11 +1,11 @@
 <?php
 
-namespace THN\Backoffice\Hotel\Insfrastructure\Factory;
+namespace THN\Backoffice\Hotel\Infrastructure\Factory;
 
 use THN\Backoffice\Hotel\Domain\Hotel;
 use THN\Backoffice\Hotel\Domain\HotelFactory;
 
-class MysqlHotelFactory extends HotelFactory
+class MySQLHotelFactory extends HotelFactory
 {
     public function createFromResultSet($dataHotels): array
     {

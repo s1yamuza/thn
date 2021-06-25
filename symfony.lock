@@ -1,0 +1,35 @@
+{
+    "hamcrest/hamcrest-php": {
+        "version": "v2.0.1"
+    },
+    "mockery/mockery": {
+        "version": "1.4.3"
+    },
+    "nikic/php-parser": {
+        "version": "v4.10.5"
+    },
+    "php-mock/php-mock": {
+        "version": "2.3.0"
+    },
+    "php-mock/php-mock-integration": {
+        "version": "2.1.0"
+    },
+    "php-mock/php-mock-phpunit": {
+        "version": "2.6.0"
+    },
+    "phpunit/php-invoker": {
+        "version": "3.1.1"
+    },
+    "sebastian/cli-parser": {
+        "version": "1.0.1"
+    },
+    "sebastian/code-unit": {
+        "version": "1.0.8"
+    },
+    "sebastian/complexity": {
+        "version": "2.0.2"
+    },
+    "sebastian/lines-of-code": {
+        "version": "1.0.3"
+    }
+}
