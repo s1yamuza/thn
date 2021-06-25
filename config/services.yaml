@@ -1,0 +1,14 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+    THN\:
+        resource: '../src/'
+        exclude:
+            - '../src/Kernel.php'
+            - '../src/Backoffice/Hotel/Infrastructure/Controler/'
+    THN\Controller\:
+        resource: '../src/Backoffice/Hotel/Infrastructure/Controller/'
+        tags: ['controller.service_arguments']
