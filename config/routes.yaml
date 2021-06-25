@@ -2,3 +2,7 @@ index:
    path: /
    controller: THN\Controller\ListHotelController
    methods:  [GET]
+hotel-reservation:
+   path: /hotel/{id}/reservation
+   controller: THN\Controller\GetHotelReservationController
+   methods:  [GET]
