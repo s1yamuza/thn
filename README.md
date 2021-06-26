@@ -1,6 +1,6 @@
 # THN Test Backend Default
 
-[![Generic badge](https://img.shields.io/badge/stable-1.1.0-blue)](https://github.com/s1yamuza/thn)
+[![Generic badge](https://img.shields.io/badge/stable-1.2.0-blue)](https://github.com/s1yamuza/thn)
 [![Generic badge](https://img.shields.io/badge/PHP-7.4-purple)](https://github.com/s1yamuza/thn)
 [![Generic badge](https://img.shields.io/badge/coverage-100%-green)](https://github.com/s1yamuza/thn)
 
