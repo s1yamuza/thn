@@ -4,6 +4,7 @@ help: ## Available Makefile commmands
 build: ## Build app
 	docker-compose build
 	@make add-git-hooks
+	@make clear-cache
 
 composer-install: ## Install dependencies
 	docker exec -it -w /code skeleton_php_1 /bin/sh -c "composer install"
@@ -27,6 +28,11 @@ add-git-hooks: ## Add custom git hooks
 	@echo "Adding hooks for git...."
 	@cd .git/hooks && ln -s ../../pre-commit pre-commit || echo 'Git Hooks already added.'
 	@echo "Done."
+
+clear-cache: ## Add custom git hooks
+		rm -rf var/cache var/log
+		mkdir var/cache var/log
+		chmod -R 777 var/cache var/log
 
 test: ## Run unit tests
 	docker exec -it -w /code skeleton_php_1 /bin/sh -c 'php ./vendor/bin/phpunit -c /code/phpunit.xml --no-coverage'
