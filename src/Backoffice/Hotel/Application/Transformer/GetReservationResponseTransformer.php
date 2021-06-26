@@ -12,7 +12,7 @@ class GetReservationResponseTransformer
         return array_map(static function (Reservation $reservation) {
             return [
                 'id' => $reservation->id(),
-                'roomNumber' => $reservation->room()->value(),
+                'room_number' => $reservation->room()->value(),
                 'has_terrace' => $reservation->room()->hasTerrace(),
                 'hotel_name' => $reservation->hotelName(),
                 'user_name' => $reservation->userName()

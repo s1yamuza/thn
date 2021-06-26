@@ -38,7 +38,7 @@
                         <ul>
                         {% for reservation in reservations %}
                             <li>
-                                Room number: {{ reservation.roomNumber }} - <b>{{ reservation.user_name }}</b>
+                                Room number: {{ reservation.room_number }} - <b>{{ reservation.user_name }}</b>
                                 - Terrace: {{ reservation.has_terrace ? 'Yes':'No' }}
 
                             </li>
