@@ -6,6 +6,8 @@
     </include>
        <exclude>
             <directory suffix="Kernel.php">./src/</directory>
+            <directory suffix="THNPDO.php">./src/Shared/Infrastructure/Persistence/SQL</directory>
+            <directory suffix=".php">./src/Backoffice/Hotel/Infrastructure/Controller</directory>
         </exclude>
     <report>
       <clover outputFile="./tests/test-reports/clover.xml"/>

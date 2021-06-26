@@ -9,8 +9,6 @@ class Hotel
     private $slugName;
     private $rooms;
     private $score;
-    private $createdAt;
-    private $updatedAt;
 
     public function __construct(
         int $id,
@@ -53,15 +51,5 @@ class Hotel
     public function score(): float
     {
         return $this->score;
-    }
-
-    public function createdAt(): string
-    {
-        return $this->createdAt;
-    }
-
-    public function updatedAt(): string
-    {
-        return $this->updatedAt;
     }
 }
