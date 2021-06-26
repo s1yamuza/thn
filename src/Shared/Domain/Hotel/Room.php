@@ -29,9 +29,4 @@ class Room extends AbstractValueObject
 
         return false;
     }
-
-    public function __toString(): string
-    {
-        return (string) $this->value();
-    }
 }
